@@ -17,9 +17,11 @@ namespace IntegrationProject.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext _context;
 
         public AccountController()
         {
+            _context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -139,7 +141,17 @@ namespace IntegrationProject.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            var days = _context.Day.ToList();
+            var months = _context.Months.ToList();
+            var years = _context.Year.ToList();
+
+            var viewModel = new RegisterViewModel()
+            {
+                DaysList = days,
+                MonthsList = months,
+                YearsList = years
+            };
+            return View(viewModel);
         }
 
         //
@@ -151,7 +163,19 @@ namespace IntegrationProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    DayId = model.ApplicationUser.DayId,
+                    MonthId = model.ApplicationUser.MonthId,
+                    YearId = model.ApplicationUser.YearId,
+                    PhoneNumber = model.PhoneNumber,
+                    ZipCode = model.ZipCode
+                };
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

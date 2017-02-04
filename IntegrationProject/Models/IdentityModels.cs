@@ -18,7 +18,7 @@ namespace IntegrationProject.Models
         public Years Year { get; set; }
         public int YearId { get; set; }
         public override string PhoneNumber { get; set; }
-        public int ZipCode { get; set; }
+        public string ZipCode { get; set; }
         public AccountTypes AccountType { get; set; }
         public int AccountTypeId { get; set; }
         public int Rating { get; set; } 
@@ -34,6 +34,13 @@ namespace IntegrationProject.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<AccountTypes> AccountType { get; set; }
+        public DbSet<Days> Day { get; set; }
+        public DbSet<Hours> Hour { get; set; }
+        public DbSet<Interests> Interest { get; set; }
+        public DbSet<Months> Months { get; set; }
+        public DbSet<Years> Year { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

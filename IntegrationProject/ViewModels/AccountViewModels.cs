@@ -65,6 +65,34 @@ namespace IntegrationProject.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [Display(Name = "Day")]
+        public int DayId { get; set; }
+
+        [Required]
+        [Display(Name = "Month")]
+        public int MonthId { get; set; }
+
+        [Required]
+        [Display(Name = "Year")]
+        public int YearId { get; set; }
+
+        [Required]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Zip Code")]
+        public string ZipCode { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -79,6 +107,13 @@ namespace IntegrationProject.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public IEnumerable<Days> DaysList { get; set; }
+        public IEnumerable<Months> MonthsList { get; set; }
+        public IEnumerable<Years> YearsList { get; set; }
+
+        public ApplicationUser ApplicationUser { get; set; }
+
     }
 
     public class ResetPasswordViewModel
