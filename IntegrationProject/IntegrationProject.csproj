@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Migrations\201702032142583_InitialMigration.cs" />
     <Compile Include="Migrations\201702032142583_InitialMigration.Designer.cs">
       <DependentUpon>201702032142583_InitialMigration.cs</DependentUpon>
@@ -212,6 +213,14 @@
     <Compile Include="Migrations\201702042035322_AddedSeedDataForDOB.Designer.cs">
       <DependentUpon>201702042035322_AddedSeedDataForDOB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702050412402_AddedDashBoardBase.cs" />
+    <Compile Include="Migrations\201702050412402_AddedDashBoardBase.Designer.cs">
+      <DependentUpon>201702050412402_AddedDashBoardBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702050440412_PlayedAroundWithRegisterForm.cs" />
+    <Compile Include="Migrations\201702050440412_PlayedAroundWithRegisterForm.Designer.cs">
+      <DependentUpon>201702050440412_PlayedAroundWithRegisterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountTypes.cs" />
     <Compile Include="Models\Days.cs" />
@@ -226,6 +235,7 @@
     </Compile>
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="ViewModels\DashBoardViewModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -288,6 +298,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -312,6 +323,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702042035322_AddedSeedDataForDOB.resx">
       <DependentUpon>201702042035322_AddedSeedDataForDOB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702050412402_AddedDashBoardBase.resx">
+      <DependentUpon>201702050412402_AddedDashBoardBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702050440412_PlayedAroundWithRegisterForm.resx">
+      <DependentUpon>201702050440412_PlayedAroundWithRegisterForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

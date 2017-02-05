@@ -42,7 +42,7 @@ namespace IntegrationProject.Models
         public DbSet<Years> Year { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            //: base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
