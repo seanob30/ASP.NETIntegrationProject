@@ -169,11 +169,12 @@ namespace IntegrationProject.Controllers
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    DayId = model.ApplicationUser.DayId,
-                    MonthId = model.ApplicationUser.MonthId,
-                    YearId = model.ApplicationUser.YearId,
+                    DayId = model.DayId,
+                    MonthId = model.MonthId,
+                    YearId = model.YearId,
                     PhoneNumber = model.PhoneNumber,
-                    ZipCode = model.ZipCode
+                    ZipCode = model.ZipCode,
+                    AccountTypeId = 1
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
