@@ -1,8 +1,17 @@
 ﻿@model IntegrationProject.ViewModels.DashBoardViewModels
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Dashboard";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2>Dashboard</h2>
+<body>
+    <ul>
+        <li>@Html.ActionLink("Update Account", "UpdateAccount", "DashBoard")</li>
+        <br />
+    </ul>
+</body>
 
-<h2>DashBoard</h2>
+
+   
+
 

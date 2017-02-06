@@ -6813,4 +6813,21 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+
+    .one-row-location {
+  width: 100%; 
+    display: table;
+}
+.location-field{
+    display: table-cell;
+    vertical-align: top;
+}
+.sidebar-nav {
+    position: absolute;
+    top: 100px;
+    width: 2000px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: table-cell;
 }

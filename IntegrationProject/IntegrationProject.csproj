@@ -225,6 +225,10 @@
     <Compile Include="Migrations\201702061639429_AddedAccountTypeSeed.Designer.cs">
       <DependentUpon>201702061639429_AddedAccountTypeSeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702062143142_AddedDayAndNightMode.cs" />
+    <Compile Include="Migrations\201702062143142_AddedDayAndNightMode.Designer.cs">
+      <DependentUpon>201702062143142_AddedDayAndNightMode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountTypes.cs" />
     <Compile Include="Models\Days.cs" />
@@ -243,8 +247,11 @@
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\UpdateAccountViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-darkly.css" />
+    <Content Include="Content\bootstrap-flatly.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -303,6 +310,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\DashBoard\Index.cshtml" />
+    <Content Include="Views\DashBoard\UpdateAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -336,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702061639429_AddedAccountTypeSeed.resx">
       <DependentUpon>201702061639429_AddedAccountTypeSeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702062143142_AddedDayAndNightMode.resx">
+      <DependentUpon>201702062143142_AddedDayAndNightMode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
