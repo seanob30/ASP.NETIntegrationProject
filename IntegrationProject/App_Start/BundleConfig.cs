@@ -1,5 +1,7 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using System.Web.Optimization;
+using Newtonsoft.Json;
 
 namespace IntegrationProject
 {
@@ -8,6 +10,9 @@ namespace IntegrationProject
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            TimeSpan sevenAM = new TimeSpan(07, 0, 0);
+            TimeSpan sixPM = new TimeSpan(18, 0, 0);
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -19,13 +24,27 @@ namespace IntegrationProject
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+           
+            if (DateTime.Now.TimeOfDay >= sevenAM && DateTime.Now.TimeOfDay < sixPM)
+            {
+                bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                     "~/Scripts/bootstrap.js",
+                     "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                bundles.Add(new StyleBundle("~/Content/css").Include(
+                    "~/Content/bootstrap-flatly.css",
+                    "~/Content/site.css"));
+            }
+            else
+            {
+                bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                     "~/Scripts/bootstrap.js",
+                     "~/Scripts/respond.js"));
+
+                bundles.Add(new StyleBundle("~/Content/css").Include(
+                   "~/Content/bootstrap-darkly.css",
+                   "~/Content/site.css"));
+            }
         }
     }
 }

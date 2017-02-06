@@ -133,6 +133,11 @@ namespace IntegrationProject.Migrations
                 new Models.Years { Id = 67, Year = 2016 },
                 new Models.Years { Id = 68, Year = 2017 }
                 );
+
+            context.AccountType.AddOrUpdate(m => m.Id,
+            new Models.AccountTypes { Id = 1, AccountType = "Customer" },
+            new Models.AccountTypes { Id = 2, AccountType = "Administrator" }
+            );
         }
     }
 }

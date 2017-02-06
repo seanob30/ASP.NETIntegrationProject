@@ -23,21 +23,21 @@
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ApplicationUser.DayId, "Day", new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.DayId, "Day", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.ApplicationUser.DayId, new SelectList(Model.DaysList, "ID", "Day"), "", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.DayId, new SelectList(Model.DaysList, "Id", "Day"), "", new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ApplicationUser.MonthId, "Month", new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.MonthId, "Month", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.ApplicationUser.MonthId, new SelectList(Model.MonthsList, "ID", "Month"), "", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.MonthId, new SelectList(Model.MonthsList, "Id", "Month"), "", new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ApplicationUser.YearId, "Year", new { @class = "col-md-2 control-label" })
+        @Html.LabelFor(m => m.YearId, "Year", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(m => m.ApplicationUser.YearId, new SelectList(Model.YearsList, "ID", "Year"), "", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.YearId, new SelectList(Model.YearsList, "Id", "Year"), "", new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">

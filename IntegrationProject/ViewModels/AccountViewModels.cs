@@ -91,6 +91,8 @@ namespace IntegrationProject.Models
         [Required]
         [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
+   
+        public int AccountTypeId { get; set; }
 
         [Required]
         [EmailAddress]
@@ -111,8 +113,6 @@ namespace IntegrationProject.Models
         public IEnumerable<Days> DaysList { get; set; }
         public IEnumerable<Months> MonthsList { get; set; }
         public IEnumerable<Years> YearsList { get; set; }
-
-        public ApplicationUser ApplicationUser { get; set; }
 
     }
 
