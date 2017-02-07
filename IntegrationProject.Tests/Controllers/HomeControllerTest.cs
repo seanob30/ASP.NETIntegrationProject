@@ -51,17 +51,5 @@ namespace IntegrationProject.Tests.Controllers
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
-        public void DashBoardIndex()
-        {
-            // Arrange
-            DashBoardController controller = new DashBoardController();
-
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
-        }
     }
 }
