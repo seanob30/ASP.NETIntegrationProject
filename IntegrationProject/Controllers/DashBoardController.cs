@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using IntegrationProject.Models;
 using IntegrationProject.ViewModels;
+using Microsoft.AspNet.Identity;
 
 namespace IntegrationProject.Controllers
 {
@@ -75,6 +76,92 @@ namespace IntegrationProject.Controllers
                 userInDatabase.ZipCode = model.ZipCode;
             }
 
+            _context.SaveChanges();
+            return RedirectToAction("Index", "DashBoard");
+        }
+
+        // GET: Update Interests
+        public ActionResult UpdateInterests()
+        {
+            var currentUserId = User.Identity.GetUserId();
+            var interestInDatabase = _context.Interest.SingleOrDefault(m => m.UserId == currentUserId);
+            UpdateInterestsViewModel viewModel = new UpdateInterestsViewModel()
+            {
+                UserId = currentUserId,
+                Comedy = interestInDatabase.Comedy,
+                Concerts = interestInDatabase.Concerts,
+                Conferences = interestInDatabase.Conferences,
+                Education = interestInDatabase.Education,
+                Family = interestInDatabase.Family,
+                Festivals = interestInDatabase.Festivals,
+                Film = interestInDatabase.Film,
+                Food = interestInDatabase.Food,
+                Fundraisers = interestInDatabase.Fundraisers,
+                Galleries = interestInDatabase.Galleries,
+                Health = interestInDatabase.Health,
+                Holidays = interestInDatabase.Holidays,
+                Literary = interestInDatabase.Literary,
+                Musuems = interestInDatabase.Musuems,
+                Neighboorhood = interestInDatabase.Neighboorhood,
+                NightLife = interestInDatabase.NightLife,
+                OnCampus = interestInDatabase.OnCampus,
+                Organizations = interestInDatabase.Organizations,
+                Outdoors = interestInDatabase.Outdoors,
+                Pets = interestInDatabase.Pets,
+                PerformingArts = interestInDatabase.PerformingArts,
+                Politics = interestInDatabase.Politics,
+                Sales = interestInDatabase.Sales,
+                Science = interestInDatabase.Science,
+                Spiritualality = interestInDatabase.Spiritualality,
+                Sports = interestInDatabase.Sports,
+                Technology = interestInDatabase.Technology
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UpdateInterests(UpdateInterestsViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                var currentUserId = User.Identity.GetUserId();
+                var interestInDatabase = _context.Interest.SingleOrDefault(m => m.UserId == currentUserId);
+
+                interestInDatabase.Comedy = model.Comedy;
+                interestInDatabase.Concerts = model.Concerts;
+                interestInDatabase.Conferences = model.Conferences;
+                interestInDatabase.Education = model.Education;
+                interestInDatabase.Family = model.Family;
+                interestInDatabase.Festivals = model.Festivals;
+                interestInDatabase.Film = model.Film;
+                interestInDatabase.Food = model.Food;
+                interestInDatabase.Fundraisers = model.Fundraisers;
+                interestInDatabase.Galleries = model.Galleries;
+                interestInDatabase.Health = model.Health;
+                interestInDatabase.Holidays = model.Holidays;
+                interestInDatabase.Literary = model.Literary;
+                interestInDatabase.Musuems = model.Musuems;
+                interestInDatabase.Neighboorhood = model.Neighboorhood;
+                interestInDatabase.NightLife = model.NightLife;
+                interestInDatabase.OnCampus = model.OnCampus;
+                interestInDatabase.Organizations = model.Organizations;
+                interestInDatabase.Outdoors = model.Outdoors;
+                interestInDatabase.Pets = model.Pets;
+                interestInDatabase.PerformingArts = model.PerformingArts;
+                interestInDatabase.Politics = model.Politics;
+                interestInDatabase.Sales = model.Sales;
+                interestInDatabase.Science = model.Science;
+                interestInDatabase.Spiritualality = model.Spiritualality;
+                interestInDatabase.Sports = model.Sports;
+                interestInDatabase.Technology = model.Technology;
+            }
+            
             _context.SaveChanges();
             return RedirectToAction("Index", "DashBoard");
         }

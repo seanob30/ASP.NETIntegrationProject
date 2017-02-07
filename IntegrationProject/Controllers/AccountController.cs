@@ -188,15 +188,76 @@ namespace IntegrationProject.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "DashBoard");
+                    return View("SelectInterests");
                 }
                 AddErrors(result);
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
 
+        // GET: /Account/SelectInterests
+
+        [AllowAnonymous]
+        public ActionResult SelectInterests()
+        {
+            var currentUserId = User.Identity.GetUserId();
+            SelectInterestsViewModel viewModel = new SelectInterestsViewModel()
+            {
+                UserId = currentUserId
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult SelectInterests(SelectInterestsViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                var currentUserName = User.Identity.GetUserId();
+
+                var userInterests = new Interests()
+                {
+                    UserId = currentUserName,
+                    Comedy = model.Comedy,
+                    Concerts = model.Concerts,
+                    Conferences = model.Conferences,
+                    Education = model.Education,
+                    Family = model.Family,
+                    Festivals = model.Festivals,
+                    Film = model.Film,
+                    Food = model.Food,
+                    Fundraisers = model.Fundraisers,
+                    Galleries = model.Galleries,
+                    Health = model.Health,
+                    Holidays = model.Holidays,
+                    Literary = model.Literary,
+                    Musuems = model.Musuems,
+                    Neighboorhood = model.Neighboorhood,
+                    NightLife = model.NightLife,
+                    OnCampus = model.OnCampus,
+                    Organizations = model.Organizations,
+                    Outdoors = model.Outdoors,
+                    Pets = model.Pets,
+                    PerformingArts = model.PerformingArts,
+                    Politics = model.Politics,
+                    Sales = model.Sales,
+                    Science = model.Science,
+                    Spiritualality = model.Spiritualality,
+                    Sports = model.Sports,
+                    Technology = model.Technology
+                };
+                _context.Interest.Add(userInterests);
+                _context.SaveChanges();
+                return RedirectToAction("Index", "DashBoard");
+            }
+        }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
@@ -368,7 +429,16 @@ namespace IntegrationProject.Controllers
                     // If the user does not have an account, then prompt the user to create an account
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.LoginProvider = loginInfo.Login.LoginProvider;
-                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel { Email = loginInfo.Email });
+                    var days = _context.Day.ToList();
+                    var months = _context.Months.ToList();
+                    var years = _context.Year.ToList();
+                    return View("ExternalLoginConfirmation", new ExternalLoginConfirmationViewModel
+                    {
+                        Email = loginInfo.Email,
+                        DaysList = days,
+                        MonthsList = months,
+                        YearsList = years
+                    });
             }
         }
 
@@ -392,7 +462,19 @@ namespace IntegrationProject.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    DayId = model.DayId,
+                    MonthId = model.MonthId,
+                    YearId = model.YearId,
+                    PhoneNumber = model.PhoneNumber,
+                    ZipCode = model.ZipCode,
+                    AccountTypeId = 1
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -400,7 +482,7 @@ namespace IntegrationProject.Controllers
                     if (result.Succeeded)
                     {
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                        return RedirectToLocal(returnUrl);
+                        return RedirectToAction("SelectInterests");
                     }
                 }
                 AddErrors(result);

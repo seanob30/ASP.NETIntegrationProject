@@ -54,15 +54,15 @@ namespace IntegrationProject
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "800820040058769",
+               appSecret: "6eb57f24f44b0f36f8764a6424a2dc7a");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "1087954138731-6uks4odqvr0dd0k4ci0tur5k0tglp13d.apps.googleusercontent.com",
+                ClientSecret = "5TPK3E89eNnajIHxSTw5ijRi"
+            });
         }
     }
 }

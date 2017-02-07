@@ -7,5 +7,6 @@ namespace IntegrationProject.ViewModels
 {
     public class DashBoardViewModels
     {
+
     }
 }

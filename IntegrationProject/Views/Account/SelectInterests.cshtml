@@ -1,0 +1,47 @@
+﻿@using System.Web.UI.WebControls
+@model IntegrationProject.Models.SelectInterestsViewModel
+@{
+    ViewBag.Title = "SelectInterests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Select Interests</h2>
+<br/>
+@using (Html.BeginForm("SelectInterests", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <ul>
+        <li>@Model.InterestsList.ElementAt(0) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Comedy, true)</li>
+        <li>@Model.InterestsList.ElementAt(1) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Concerts, true)</li>
+        <li>@Model.InterestsList.ElementAt(2) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Conferences, true)</li>
+        <li>@Model.InterestsList.ElementAt(3) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Education, true)</li>
+        <li>@Model.InterestsList.ElementAt(4) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Family, true)</li>
+        <li>@Model.InterestsList.ElementAt(5) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Festivals, true)</li>
+        <li>@Model.InterestsList.ElementAt(6) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Film, true)</li>
+        <li>@Model.InterestsList.ElementAt(7) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Food, true)</li>
+        <li>@Model.InterestsList.ElementAt(8) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Fundraisers, true)</li>
+        <li>@Model.InterestsList.ElementAt(9) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Galleries, true)</li>
+        <li>@Model.InterestsList.ElementAt(10) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Health, true)</li>
+        <li>@Model.InterestsList.ElementAt(11) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Holidays, true)</li>
+        <li>@Model.InterestsList.ElementAt(12) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Literary, true)</li>
+        <li>@Model.InterestsList.ElementAt(13) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Musuems, true)</li>
+        <li>@Model.InterestsList.ElementAt(14) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Neighboorhood, true)</li>
+        <li>@Model.InterestsList.ElementAt(15) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.NightLife, true)</li>
+        <li>@Model.InterestsList.ElementAt(16) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.OnCampus, true)</li>
+        <li>@Model.InterestsList.ElementAt(17) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Organizations, true)</li>
+        <li>@Model.InterestsList.ElementAt(18) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Outdoors, true)</li>
+        <li>@Model.InterestsList.ElementAt(19) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Pets, true)</li>
+        <li>@Model.InterestsList.ElementAt(20) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.PerformingArts, true)</li>
+        <li>@Model.InterestsList.ElementAt(21) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Politics, true)</li>
+        <li>@Model.InterestsList.ElementAt(22) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Sales, true)</li>
+        <li>@Model.InterestsList.ElementAt(23) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Science, true)</li>
+        <li>@Model.InterestsList.ElementAt(24) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Spiritualality, true)</li>
+        <li>@Model.InterestsList.ElementAt(25) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Sports, true)</li>
+        <li>@Model.InterestsList.ElementAt(26) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Technology, true)</li>
+    </ul>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Submit" />
+        </div>
+    </div>
+}

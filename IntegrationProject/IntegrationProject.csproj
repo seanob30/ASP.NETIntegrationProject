@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44395</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -229,6 +229,30 @@
     <Compile Include="Migrations\201702062143142_AddedDayAndNightMode.Designer.cs">
       <DependentUpon>201702062143142_AddedDayAndNightMode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702071418431_CreatedColumnsForInterests.cs" />
+    <Compile Include="Migrations\201702071418431_CreatedColumnsForInterests.Designer.cs">
+      <DependentUpon>201702071418431_CreatedColumnsForInterests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071628253_ChangedInterestsUserFKToUsername.cs" />
+    <Compile Include="Migrations\201702071628253_ChangedInterestsUserFKToUsername.Designer.cs">
+      <DependentUpon>201702071628253_ChangedInterestsUserFKToUsername.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071650541_CreatedSelectInterestsViewModelContents.cs" />
+    <Compile Include="Migrations\201702071650541_CreatedSelectInterestsViewModelContents.Designer.cs">
+      <DependentUpon>201702071650541_CreatedSelectInterestsViewModelContents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071843206_RemovedInterestsUserNameJustIDNow.cs" />
+    <Compile Include="Migrations\201702071843206_RemovedInterestsUserNameJustIDNow.Designer.cs">
+      <DependentUpon>201702071843206_RemovedInterestsUserNameJustIDNow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071845023_TempDeletedInterestsTable.cs" />
+    <Compile Include="Migrations\201702071845023_TempDeletedInterestsTable.Designer.cs">
+      <DependentUpon>201702071845023_TempDeletedInterestsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071848066_AddedInterestsTable.cs" />
+    <Compile Include="Migrations\201702071848066_AddedInterestsTable.Designer.cs">
+      <DependentUpon>201702071848066_AddedInterestsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountTypes.cs" />
     <Compile Include="Models\Days.cs" />
@@ -248,6 +272,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\UpdateAccountViewModels.cs" />
+    <Compile Include="ViewModels\UpdateInterestsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-darkly.css" />
@@ -311,6 +336,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\DashBoard\Index.cshtml" />
     <Content Include="Views\DashBoard\UpdateAccount.cshtml" />
+    <Content Include="Views\Account\SelectInterests.cshtml" />
+    <Content Include="Views\DashBoard\UpdateInterests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -348,6 +375,24 @@
     <EmbeddedResource Include="Migrations\201702062143142_AddedDayAndNightMode.resx">
       <DependentUpon>201702062143142_AddedDayAndNightMode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071418431_CreatedColumnsForInterests.resx">
+      <DependentUpon>201702071418431_CreatedColumnsForInterests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071628253_ChangedInterestsUserFKToUsername.resx">
+      <DependentUpon>201702071628253_ChangedInterestsUserFKToUsername.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071650541_CreatedSelectInterestsViewModelContents.resx">
+      <DependentUpon>201702071650541_CreatedSelectInterestsViewModelContents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071843206_RemovedInterestsUserNameJustIDNow.resx">
+      <DependentUpon>201702071843206_RemovedInterestsUserNameJustIDNow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071845023_TempDeletedInterestsTable.resx">
+      <DependentUpon>201702071845023_TempDeletedInterestsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071848066_AddedInterestsTable.resx">
+      <DependentUpon>201702071848066_AddedInterestsTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -367,7 +412,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>11701</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:11701/</IISUrl>
+          <IISUrl>https://localhost:44395/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
