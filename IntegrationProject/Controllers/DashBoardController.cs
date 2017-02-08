@@ -27,6 +27,10 @@ namespace IntegrationProject.Controllers
         {
             return View();
         }
+        public ActionResult Directions()
+        {
+            return View();
+        }
 
         // GET: UpdateAccount
         public ActionResult UpdateAccount()

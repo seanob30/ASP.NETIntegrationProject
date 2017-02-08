@@ -338,6 +338,7 @@
     <Content Include="Views\DashBoard\UpdateAccount.cshtml" />
     <Content Include="Views\Account\SelectInterests.cshtml" />
     <Content Include="Views\DashBoard\UpdateInterests.cshtml" />
+    <Content Include="Views\DashBoard\Directions.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
