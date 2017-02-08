@@ -253,6 +253,10 @@
     <Compile Include="Migrations\201702071848066_AddedInterestsTable.Designer.cs">
       <DependentUpon>201702071848066_AddedInterestsTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702082039417_RoutineCheck.cs" />
+    <Compile Include="Migrations\201702082039417_RoutineCheck.Designer.cs">
+      <DependentUpon>201702082039417_RoutineCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountTypes.cs" />
     <Compile Include="Models\Days.cs" />
@@ -279,6 +283,7 @@
     <Content Include="Content\bootstrap-flatly.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\default_avatar.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -289,6 +294,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Dashboard.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -334,11 +340,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\DashBoard\Index.cshtml" />
     <Content Include="Views\DashBoard\UpdateAccount.cshtml" />
     <Content Include="Views\Account\SelectInterests.cshtml" />
     <Content Include="Views\DashBoard\UpdateInterests.cshtml" />
     <Content Include="Views\DashBoard\Directions.cshtml" />
+    <Content Include="Views\Shared\_LayoutDash.cshtml" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -393,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702071848066_AddedInterestsTable.resx">
       <DependentUpon>201702071848066_AddedInterestsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702082039417_RoutineCheck.resx">
+      <DependentUpon>201702082039417_RoutineCheck.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

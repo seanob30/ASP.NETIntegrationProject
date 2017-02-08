@@ -25,7 +25,28 @@ namespace IntegrationProject.Controllers
         // GET: DashBoard
         public ActionResult Index()
         {
-            return View();
+            var currentUserName = User.Identity.Name;
+            var currentUser = _context.Users.FirstOrDefault(m => m.UserName == currentUserName);
+
+            var viewModel = new DashBoardViewModels()
+            {
+                User = currentUser
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(DashBoardViewModels model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View();
+            }
         }
         public ActionResult Directions()
         {
