@@ -58,21 +58,33 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-10">
-                <div class="profile-content">
 
-    <div class="col-md-5">
+<div class="profile-content">
+
+    <div class="col-md-9">
     <center>
-    <h1>Search for nearby events here</h1>
+    <h1>Search for nearby by evetns here:</h1><br>
+
+
         <form id="form" class="form-inline">
             <input class="form-control" size="50" placeholder="Enter the type of event would you like" type="text" id="search" required>
             <input type="button" onclick="searchData()" value="Submit">
-        </form> </center>
+        </form> 
+    
+    </center>
         <br><br>
         <center>
         <div class="container" align="center">
             <div class="row">
-                <div id="search-results"></div>
+                <div id="search-results">
+                    <div class="row">
+                        <div class="col-md-3">Title</div>
+                        <div class="col-md-2">Date : Time</div>
+                        <div class="col-md-2">Venue Name</div>
+                        <div class="col-md-2">Location</div>
+                    </div>
+                    <br>
+                </div>
             </div>
          </div>
 
@@ -93,11 +105,11 @@ function searchData()
    EVDB.API.call("/events/search", oArgs, function (oData) {
        var html = '';
     for (i=0; i < oData.events.event.length; i++) {
-        html += document.getElementById("search-results").innerHTML += '<div class="row">' + '<div class="col-md-1">' + oData.events.event[i].title + "</div>" + '<div class="col-md-1">' + oData.events.event[i].start_time + "</div>" + '<div class="col-md-1">' + oData.events.event[i].venue_name + "</div>" + '<div class="col-md-2">' + oData.events.event[i].venue_address + "</div>" +"</div>";
+        html += document.getElementById("search-results").innerHTML += '<div class="row">' + '<div class="col-md-3">' + oData.events.event[i].title + "</div>" + '<div class="col-md-2">' + oData.events.event[i].start_time.replace("2017-", "") + "</div>" + '<div class="col-md-2">' + oData.events.event[i].venue_name + "</div>" + '<div class="col-md-2">' + oData.events.event[i].venue_address + "</div>" +"</div>";
 
 
     }
-       $('search-results').html(html)
+       $('search-results').append(html)
     });
 }
 </script>
@@ -105,8 +117,14 @@ function searchData()
 <br>
 </center>
 </div>
-    </div>
-      </div>
+
+
+
+<div class="col-md-5">
+
+                    
+</div>
+
         </div>
     </div>
 </div>
