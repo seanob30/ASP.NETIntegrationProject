@@ -3,7 +3,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutDash.cshtml";
 }
-
+<head>
+    <script type="text/javascript" src="https://api.eventful.com/js/api"> </script>
+</head>
 <body>
 <br/>
 <br/>
@@ -58,9 +60,54 @@
             </div>
             <div class="col-md-9">
                 <div class="profile-content">
-                
-                </div>
+
+    <div class="col-md-5">
+    <center>
+    <br>
+    <h1>Search for nearby events here</h1>
+        <form id="form" class="form-inline">
+            <input class="form-control" size="50" placeholder="Enter the type of event would you like" type="text" id="search" required>
+            <input type="button" onclick="searchData()" value="Submit">
+        </form> </center>
+        <br><br>
+        <center>
+        <div class="container" align="center">
+            <div class="row">
+                <div id="search-results"></div>
             </div>
+         </div>
+
+       
+<script type="text/javascript">
+
+function searchData()
+{
+  var query = document.getElementById("search").value;
+   var oArgs = {
+      app_key: "D6WcnD6b7PwqctmP",
+      q: query,
+      where: "Seattle",
+      date: "Today",
+      page_size: 5,
+      sort_order: "popularity",
+   };
+   EVDB.API.call("/events/search", oArgs, function (oData) {
+       var html = '';
+    for (i=0; i < oData.events.event.length; i++) {
+        html += document.getElementById("search-results").innerHTML += '<div class="row">' + '<div class="col-md-2">' + oData.events.event[i].title + "</div>" + '<div class="col-md-1">' + oData.events.event[i].start_time + "</div>" + "</div>";
+
+
+    }
+       $('search-results').html(html)
+    });
+}
+</script>
+
+<br>
+</center>
+</div>
+    </div>
+      </div>
         </div>
     </div>
 </div>
