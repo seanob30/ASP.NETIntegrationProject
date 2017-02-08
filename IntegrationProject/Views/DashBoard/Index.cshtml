@@ -13,7 +13,7 @@
 <div class="container body-content">
     <div class="container">
         <div class="row profile">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="profile-sidebar">
                     <div class="profile-userpic">
                         <img src="~/Content/default_avatar.png" height="180px" width="180px" class="img-responsive" alt="">
@@ -58,12 +58,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <div class="profile-content">
 
     <div class="col-md-5">
     <center>
-    <br>
     <h1>Search for nearby events here</h1>
         <form id="form" class="form-inline">
             <input class="form-control" size="50" placeholder="Enter the type of event would you like" type="text" id="search" required>
@@ -94,7 +93,7 @@ function searchData()
    EVDB.API.call("/events/search", oArgs, function (oData) {
        var html = '';
     for (i=0; i < oData.events.event.length; i++) {
-        html += document.getElementById("search-results").innerHTML += '<div class="row">' + '<div class="col-md-2">' + oData.events.event[i].title + "</div>" + '<div class="col-md-1">' + oData.events.event[i].start_time + "</div>" + "</div>";
+        html += document.getElementById("search-results").innerHTML += '<div class="row">' + '<div class="col-md-1">' + oData.events.event[i].title + "</div>" + '<div class="col-md-1">' + oData.events.event[i].start_time + "</div>" + '<div class="col-md-1">' + oData.events.event[i].venue_name + "</div>" + '<div class="col-md-2">' + oData.events.event[i].venue_address + "</div>" +"</div>";
 
 
     }
