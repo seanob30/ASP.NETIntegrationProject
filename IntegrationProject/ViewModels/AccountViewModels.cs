@@ -215,13 +215,7 @@ namespace IntegrationProject.Models
         [Display(Name = "Technology")]
         public bool Technology { get; set; }
 
-        public IEnumerable<string> InterestsList = new List<string>
-        {
-            "Comedy", "Concerts", "Conferences", "Education", "Family", "Festivals", "Film", "Food", "Fundraisers",
-            "Galleries", "Health", "Holidays", "Literary", "Musuems", "Neighboorhood", "Night Life", "On Campus",
-            "Organizations", "Outdoors", "Pets", "Performing Arts", "Politics", "Sales", "Science", "Spiritualality",
-            "Sports", "Technology"
-        };
+        public IEnumerable<string> InterestsList { get; set; }
     }
 
     public class ResetPasswordViewModel

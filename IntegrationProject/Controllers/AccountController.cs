@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -202,9 +203,40 @@ namespace IntegrationProject.Controllers
         public ActionResult SelectInterests()
         {
             var currentUserId = User.Identity.GetUserId();
+            List<string>interestsList = new List<string>()
+            {
+                "Comedy",
+                "Concerts",
+                "Conferences",
+                "Education",
+                "Family",
+                "Festivals",
+                "Film",
+                "Food",
+                "Fundraisers",
+                "Galleries",
+                "Health",
+                "Holidays",
+                "Literary",
+                "Musuems",
+                "Neighboorhood",
+                "Night Life",
+                "On Campus",
+                "Organizations",
+                "Outdoors",
+                "Pets",
+                "Performing Arts",
+                "Politics",
+                "Sales",
+                "Science",
+                "Spiritualality",
+                "Sports",
+                "Technology"
+            };
             SelectInterestsViewModel viewModel = new SelectInterestsViewModel()
             {
-                UserId = currentUserId
+                UserId = currentUserId,
+                InterestsList = interestsList
             };
 
             return View(viewModel);
