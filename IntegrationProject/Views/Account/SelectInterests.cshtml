@@ -9,35 +9,305 @@
 <br/>
 @using (Html.BeginForm("SelectInterests", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    @Html.AntiForgeryToken()
+   @Html.AntiForgeryToken()
     <ul>
-        <li>@Model.InterestsList.ElementAt(0) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Comedy, true)</li>
-        <li>@Model.InterestsList.ElementAt(1) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Concerts, true)</li>
-        <li>@Model.InterestsList.ElementAt(2) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Conferences, true)</li>
-        <li>@Model.InterestsList.ElementAt(3) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Education, true)</li>
-        <li>@Model.InterestsList.ElementAt(4) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Family, true)</li>
-        <li>@Model.InterestsList.ElementAt(5) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Festivals, true)</li>
-        <li>@Model.InterestsList.ElementAt(6) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Film, true)</li>
-        <li>@Model.InterestsList.ElementAt(7) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Food, true)</li>
-        <li>@Model.InterestsList.ElementAt(8) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Fundraisers, true)</li>
-        <li>@Model.InterestsList.ElementAt(9) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Galleries, true)</li>
-        <li>@Model.InterestsList.ElementAt(10) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Health, true)</li>
-        <li>@Model.InterestsList.ElementAt(11) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Holidays, true)</li>
-        <li>@Model.InterestsList.ElementAt(12) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Literary, true)</li>
-        <li>@Model.InterestsList.ElementAt(13) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Musuems, true)</li>
-        <li>@Model.InterestsList.ElementAt(14) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Neighboorhood, true)</li>
-        <li>@Model.InterestsList.ElementAt(15) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.NightLife, true)</li>
-        <li>@Model.InterestsList.ElementAt(16) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.OnCampus, true)</li>
-        <li>@Model.InterestsList.ElementAt(17) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Organizations, true)</li>
-        <li>@Model.InterestsList.ElementAt(18) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Outdoors, true)</li>
-        <li>@Model.InterestsList.ElementAt(19) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Pets, true)</li>
-        <li>@Model.InterestsList.ElementAt(20) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.PerformingArts, true)</li>
-        <li>@Model.InterestsList.ElementAt(21) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Politics, true)</li>
-        <li>@Model.InterestsList.ElementAt(22) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Sales, true)</li>
-        <li>@Model.InterestsList.ElementAt(23) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Science, true)</li>
-        <li>@Model.InterestsList.ElementAt(24) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Spiritualality, true)</li>
-        <li>@Model.InterestsList.ElementAt(25) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Sports, true)</li>
-        <li>@Model.InterestsList.ElementAt(26) &nbsp;&nbsp;&nbsp; Yes @Html.RadioButtonFor(m => m.Technology, true)</li>
+        <div class="form-group">
+            Comedy &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Comedy, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Comedy, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Concerts &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Concerts, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Concerts, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Conferences &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Conferences, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Conferences, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Education &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Education, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Education, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Family &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Family, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Family, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Festivals &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Festivals, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Festivals, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Film &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Film, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Film, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Food &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Food, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Food, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Fundraisers &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Fundraisers, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Fundraisers, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Galleries &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Galleries, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Galleries, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Health &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Health, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Health, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Holidays &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Holidays, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Holidays, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Literary &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Literary, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Literary, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Musuems &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Musuems, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Musuems, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Neighboorhood &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Neighboorhood, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Neighboorhood, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Night Life &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.NightLife, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.NightLife, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            On Campus &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.OnCampus, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.OnCampus, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Organizations &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Organizations, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Organizations, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            @Model.InterestsList.ElementAt(18) &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Outdoors, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Outdoors, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Pets &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Pets, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Pets, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Performing Arts &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.PerformingArts, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.PerformingArts, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Politics &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Politics, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Politics, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Sales &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Sales, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Sales, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Science &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Science, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Science, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Spiritualality &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Spiritualality, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Spiritualality, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Sports &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Sports, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Sports, false) No
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            Technology &nbsp;&nbsp;&nbsp;
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary">
+                    @Html.RadioButtonFor(m => m.Technology, true) Yes
+                </label>
+                <label class="btn btn-primary active">
+                    @Html.RadioButtonFor(m => m.Technology, false) No
+                </label>
+            </div>
+        </div>
     </ul>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
