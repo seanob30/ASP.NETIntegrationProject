@@ -10,5 +10,7 @@ namespace IntegrationProject.ViewModels
     public class DashBoardViewModels
     {
         public ApplicationUser User { get; set; }
+        public Interests Interest { get; set; }
+        public IEnumerable<string> SelectedInterestsList { get; set; }
     }
 }

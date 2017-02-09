@@ -3,132 +3,113 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutDash.cshtml";
 }
-<head>
-    <script type="text/javascript" src="https://api.eventful.com/js/api"> </script>
-</head>
 <body>
-<br/>
-<br/>
-<br/>
-<div class="container body-content">
-    <div class="container">
-        <div class="row profile">
-            <div class="col-md-2">
-                <div class="profile-sidebar">
-                    <div class="profile-userpic">
-                        <img src="~/Content/default_avatar.png" height="180px" width="180px" class="img-responsive" alt="">
-                    </div>
-                    <br/>
-                    <div class="profile-usertitle">
-                        <div class="profile-usertitle-name">
-                            @Model.User.FirstName @Model.User.LastName
+    <br />
+    <br />
+    <br />
+    <div class="container body-content">
+        <div class="container">
+            <div class="row profile">
+                <div class="col-md-3">
+                    <div class="profile-sidebar">
+                        <div class="profile-userpic">
+                            <img src="~/Content/default_avatar.png" height="180px" width="180px" class="img-responsive" alt="">
                         </div>
-                        <div class="profile-usertitle-job">
-                            User
+                        <br />
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name">
+                                @Model.User.FirstName @Model.User.LastName
+                            </div>
+                            <div class="profile-usertitle-job">
+                                User
+                            </div>
                         </div>
-                    </div>
-                    <br/>
-                    <div class="profile-usermenu">
-                        <ul class="nav">
-                            <li class="active">
-                                <a id="homeButton" onclick="location.href='@Url.Action("Index", "DashBoard")'">
-                                    <i class="glyphicon glyphicon-home"></i>
-                                    &nbsp;Dashboard
-                                </a>
-                            </li>
-                            <li>
-                                <a id="updateAccountButton" onclick="location.href='@Url.Action("UpdateAccount", "DashBoard")'">
-                                    <i class="glyphicon glyphicon-user"></i>
-                                    &nbsp;Account Settings
-                                </a>
-                            </li>
-                            <li>
-                                <a id="updateInterestsButton" onclick="location.href='@Url.Action("UpdateInterests", "DashBoard")'">
-                                    <i class="glyphicon glyphicon-ok"></i>
-                                    &nbsp;Interests
-                                </a>
-                            </li>
-                            <li>
-                                <a id="directionsButton" onclick="location.href='@Url.Action("Directions", "DashBoard")'">
-                                    <i class="glyphicon glyphicon-dashboard"></i>
-                                    &nbsp;Directions
-                                </a>
-                            </li>
-                        </ul>
+                        <br />
+                        <div class="profile-usermenu">
+                            <ul class="nav">
+                                <li class="active">
+                                    <a id="homeButton" onclick="location.href='@Url.Action("Index", "DashBoard")'">
+                                        <i class="glyphicon glyphicon-home"></i>
+                                        &nbsp;Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="updateAccountButton" onclick="location.href='@Url.Action("UpdateAccount", "DashBoard")'">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        &nbsp;Account Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="updateInterestsButton" onclick="location.href='@Url.Action("UpdateInterests", "DashBoard")'">
+                                        <i class="glyphicon glyphicon-ok"></i>
+                                        &nbsp;Interests
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="directionsButton" onclick="location.href='@Url.Action("Directions", "DashBoard")'">
+                                        <i class="glyphicon glyphicon-dashboard"></i>
+                                        &nbsp;Directions
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-md-9">
+                    <div class="profile-content">
 
-<div class="profile-content">
-
-    <div class="col-md-9">
-    <center>
-    <h1>Search for nearby by events here:</h1><br>
-
-
-        <form id="form" class="form-inline">
-            <input class="form-control" size="50" placeholder="Enter the type of event would you like" type="text" id="search" required>
-            <input type="button" onclick="searchData()" value="Submit">
-        </form> 
-    
-    </center>
-        <br><br>
-        <center>
-        <div class="container" align="center">
-            <div class="row">
-                <div id="search-results">
-                    <div class="row">
-                        <div class="col-md-3 borderClass"><b>Title</b></div>
-                        <div class="col-md-2 borderClass"><b>Date : Time</b></div>
-                        <div class="col-md-2 borderClass"><b>Venue Name</b></div>
-                        <div class="col-md-2 borderClass"><b>Location</b></div>
-                    </div>
-                    <br>
-                </div>
-            </div>
-         </div>
-
-       
-<script type="text/javascript">
-
-function searchData()
-{
-  var query = document.getElementById("search").value;
-   var oArgs = {
-      app_key: "D6WcnD6b7PwqctmP",
-      q: query,
-      where: "Seattle",
-      date: "Today",
-      page_size: 5,
-      sort_order: "popularity",
-   };
-   EVDB.API.call("/events/search", oArgs, function (oData) {
-       var html = '';
-    for (i=0; i < oData.events.event.length; i++) {
-        html += document.getElementById("search-results").innerHTML += '<div class="row">' + '<div class="col-md-3 borderClass">' + oData.events.event[i].title + "</div>" + '<div class="col-md-2 borderClass">' + oData.events.event[i].start_time.replace("2017-", "") + "</div>" + '<div class="col-md-2 borderClass">' + oData.events.event[i].venue_name + "</div>" + '<div class="col-md-2 borderClass">' + oData.events.event[i].venue_address + "</div>" + "</div>";
-
-
-    }
-       $('search-results').append(html)
-    });
-}
-</script>
+                        <div class="col-md-5">
+                            <div class="container" align="center">
+                                <div class="row">
+                                    <div id="search-results"></div>
+                                </div>
+                            </div>
+                            <script src="/Scripts/jquery-1.10.2.js"></script>
+                            <script type="text/javascript" src="https://api.eventful.com/js/api"></script>
+                            <script>
+            $( document ).ready(function() {
+                var oArgs = {
+                    app_key: "D6WcnD6b7PwqctmP",
+                    q: "@Model.SelectedInterestsList.ElementAt(0)",
+                    where: "San Francisco",
+                    date: "Today",
+                    page_size: 5,
+                    sort_order: "popularity"
+                };
+                EVDB.API.call("/events/search",
+                    oArgs,
+                    function(oData) {
+                        var html = '';
+                        for (i = 0; i < oData.events.event.length; i++) {
+                            html += document.getElementById("search-results")
+                                .innerHTML += '<div class="row">' +
+                                '<div class="col-md-1">' +
+                                oData.events.event[i].title.substring(0, 14) +
+                                "</div>" +
+                                '<div class="col-md-1">' +
+                                oData.events.event[i].start_time.replace("2017-", "") +
+                                "</div>" +
+                                '<div class="col-md-1">' +
+                                oData.events.event[i].venue_name.substring(0, 14) +
+                                "</div>" +
+                                '<div class="col-md-2">' +
+                                oData.events.event[i].venue_address +
+                                "</div>" +
+                                "</div>" +
+                                '<br />';
+                        }
+                        $('search-results').html(html)
+                    });
+            });
+        </script>
 
 <br>
-</center>
 </div>
-
-
-
-<div class="col-md-5">
-
-                    
 </div>
-
-        </div>
-    </div>
 </div>
-
+</div>
+</div>
+</div>
 <br>
 <br>
 </body>
