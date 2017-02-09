@@ -13,7 +13,7 @@
 <div class="container body-content">
     <div class="container">
         <div class="row profile">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="profile-sidebar">
                     <div class="profile-userpic">
                         <img src="~/Content/default_avatar.png" height="180px" width="180px" class="img-responsive" alt="">
@@ -58,10 +58,10 @@
                     </div>
                 </div>
             </div>
-
+<div class="col-md-9"
 <div class="profile-content">
 
-    <div class="col-md-9">
+    <div class="col-md-5">
     <center>
     <h1>Search for nearby by events here:</h1><br>
 
@@ -80,8 +80,6 @@
                     <div class="row">
                         <div class="col-md-3 borderClass"><b>Title</b></div>
                         <div class="col-md-2 borderClass"><b>Date : Time</b></div>
-                        <div class="col-md-2 borderClass"><b>Venue Name</b></div>
-                        <div class="col-md-2 borderClass"><b>Location</b></div>
                     </div>
                     <br>
                 </div>
@@ -105,7 +103,7 @@ function searchData()
    EVDB.API.call("/events/search", oArgs, function (oData) {
        var html = '';
     for (i=0; i < oData.events.event.length; i++) {
-        html += document.getElementById("search-results").innerHTML += '<div class="row">' + '<div class="col-md-3 borderClass">' + oData.events.event[i].title + "</div>" + '<div class="col-md-2 borderClass">' + oData.events.event[i].start_time.replace("2017-", "") + "</div>" + '<div class="col-md-2 borderClass">' + oData.events.event[i].venue_name + "</div>" + '<div class="col-md-2 borderClass">' + oData.events.event[i].venue_address + "</div>" + "</div>";
+        html += document.getElementById("search-results").innerHTML += '<div class="row">' + '<div class="col-md-3 borderClass">' + oData.events.event[i].title.substring(0, 40) + "</div>" + '<div class="col-md-2 borderClass">' + oData.events.event[i].start_time.replace("2017-", "").substring(0, 25) + "</div>" + "</div";
 
 
     }
@@ -120,7 +118,7 @@ function searchData()
 
 
 
-<div class="col-md-5">
+<div class="col-md-4">
 
                     
 </div>
