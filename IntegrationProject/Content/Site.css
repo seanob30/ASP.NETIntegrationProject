@@ -33,4 +33,16 @@ textarea {
     background-color: #18bc9c;
 }
 
+.intro-section {
+    background-image: url("cityskyline.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	min-height: auto;
+	width: auto;
+	height: 100vh;
+}
 
+.services-section {
+    background-color: #d2f9f1;
+}
