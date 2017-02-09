@@ -52,6 +52,10 @@ namespace IntegrationProject.Controllers
         {
             return View();
         }
+        public ActionResult Events()
+        {
+            return View();
+        }
 
         // GET: UpdateAccount
         public ActionResult UpdateAccount()

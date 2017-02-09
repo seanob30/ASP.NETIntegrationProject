@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutDash.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="https://api.eventful.com/js/api"></script>
+    <script src="@Url.Content("~/Scripts/eventfilter.js")"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Events</title>
+</head>
+<body>
+    <div></div>
+    <div><label><input type='checkbox' onclick='showEvents("comedy");'>Comedy</label>
+    <label><input type='checkbox' onclick='showEvents("concerts");'>Concerts</label>
+    <label><input type='checkbox' onclick='showEvents("conferences");'>Conferences</label>
+    <label><input type='checkbox' onclick='showEvents("education");'>Education</label>
+    <label><input type='checkbox' onclick='showEvents("family");'>Family</label>
+    <label><input type='checkbox' onclick='showEvents("festivals");'>Festivals</label>
+    <label><input type='checkbox' onclick='showEvents("film");'>Film</label>
+    <label><input type='checkbox' onclick='showEvents("food");'>Food</label>
+    <label><input type='checkbox' onclick='showEvents("fundraisers");'>Fundraisers</label>
+    <label><input type='checkbox' onclick='showEvents("galleries");'>Galleries</label>
+    <label><input type='checkbox' onclick='showEvents("health");'>Health</label>
+    <label><input type='checkbox' onclick='showEvents("holidays");'>Holidays</label>
+    <label><input type='checkbox' onclick='showEvents("literacy");'>Literacy</label>
+    <label><input type='checkbox' onclick='showEvents("museums");'>Museums</label></div>
+    <div></div>
+    <div><label><input type='checkbox' onclick='showEvents("neighboorhood");'>Neighboorhood</label>
+    <label><input type='checkbox' onclick='showEvents("night life");'>Night Life</label>
+    <label><input type='checkbox' onclick='showEvents("on campus");'>On Campus</label>
+    <label><input type='checkbox' onclick='showEvents("organizations");'>Organizations</label>
+    <label><input type='checkbox' onclick='showEvents("outdoors");'>Outdoors</label>
+    <label><input type='checkbox' onclick='showEvents("pets");'>Pets</label>
+    <label><input type='checkbox' onclick='showEvents("performing arts");'>Performing Arts</label>
+    <label><input type='checkbox' onclick='showEvents("politics");'>Politics</label>
+    <label><input type='checkbox' onclick='showEvents("sales");'>Sales</label>
+    <label><input type='checkbox' onclick='showEvents("science");'>Science</label>
+    <label><input type='checkbox' onclick='showEvents("spiritualality");'>Spiritualality</label>
+    <label><input type='checkbox' onclick='showEvents("sports");'>Sports</label>
+    <label><input type='checkbox' onclick='showEvents("technology");'>Technology</label></div>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Start Time</th>
+                <th>Venue</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div>
+    </div>
+</body>
+</html>
