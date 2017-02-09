@@ -22,6 +22,10 @@ namespace IntegrationProject.Controllers
             _context.Dispose();
         }
 
+        public ActionResult Calendar()
+        {
+            return View();
+        }
         // GET: DashBoard
         public ActionResult Index()
         {
