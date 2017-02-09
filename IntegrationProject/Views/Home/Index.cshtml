@@ -2,30 +2,191 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Urban Agenda</title>
+    
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+
+
+    <!-- Intro Section -->
+    <center>
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br /><br /><br />
+                    <div class="jumbotron">
+                        <h1>Urban Agenda</h1>
+                    </div>
+                    
+
+
+                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+                </div>
+            </div>
+        </div>
+    </section> </center>
+
+
+
+
+
+    <!-- About Section -->
+   <center> <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br /><br /><br />
+                    <h1>About Us</h1>
+                    <br>
+                    <p>Welcome to the entertainment hub in your district!</p>
+                    <br>
+                    <p>Our goal is to help you have fun and keep you active with providing you an easy way to find</p>
+                    <p>your favorite activities and give you the tools to plan out your scheudle.</p>
+                    <p>You never need to miss another special event near you again!</p>
+                    <br /><br /><br /><br /><br />
+                                       
+                    <p>Register with us today and start getting up-to-date event details near you!</p>
+                    <a class="btn btn-default page-scroll" onclick="location.href='@Url.Action("Register", "Account")'">Register</a>
+
+
+                    <br /><br /><br /><br /><br />
+                </div>
+            </div>
+        </div>
+    </section> </center>
+
+
+
+
+    <!-- Services Section -->
+    <center><section id="services" class="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br /><br /><br />
+                    <h1>Our Services</h1>
+                    <br>
+                    <p>Sign up with us today and you'll get:</p>
+                    <br>
+                    <p>- Exclusive access to local events in real time.</p>
+                    <p>- Your own weather forcast to help you plan for your upcoming events.</p>
+                    <p>- A personal calendar for you to see an overview of your schedule.</p>
+                    <br /><br /><br /><br /><br />
+
+                    <p>Don't wait! Register with us today and start taking advantage of your schedule!</p>
+                    <a class="btn btn-default page-scroll" onclick="location.href='@Url.Action("Register", "Account")'">Register</a>
+
+                    <br /><br /><br /><br /><br /><br />
+
+                </div>
+            </div>
+        </div>
+    </section> </center>
+
+
+
+
+
+    <!-- Contact Section -->
+    <center><section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br /><br /><br />
+                    <center>
+                        <h1>Contact Us</h1>
+                        <br />
+
+                        <address>
+                            Urban Agenda<br>
+                            333 N Plankinton Ave<br>
+                            Milwaukee, WI 53202<br>
+                            <abbr title="Phone">P:</abbr>
+                            888.555.5555
+                        </address>
+                    </center>
+                    <br /><br />
+
+                    <center>
+                        <form name="htmlform" method="post" action="html_form_send.php">
+                            <table width="450px">
+                                <tr>
+                                    <td valign="top">
+                                        <label for="first_name">First Name *</label>
+                                    </td>
+                                    <td valign="top">
+                                        <input type="text" name="first_name" maxlength="50" size="30">
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td valign="top" ">
+                                        <label for="last_name">Last Name *</label>
+                                    </td>
+                                    <td valign="top">
+                                        <input type="text" name="last_name" maxlength="50" size="30">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <label for="email">Email Address *</label>
+                                    </td>
+                                    <td valign="top">
+                                        <input type="text" name="email" maxlength="80" size="30">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <label for="telephone">Telephone Number</label>
+                                    </td>
+                                    <td valign="top">
+                                        <input type="text" name="telephone" maxlength="30" size="30">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top">
+                                        <label for="comments">Comments *</label>
+                                    </td>
+                                    <td valign="top">
+                                        <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="text-align:center">
+                                        <input type="submit" value="Submit">   
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                     </center>
+            </div>
+        </div>
 </div>
+                <br /><br /><br /><br /><br />
+
+    </section>
+
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+</body>
+</html>
