@@ -52,6 +52,12 @@
                                         &nbsp;Directions
                                     </a>
                                 </li>
+                                <li>
+                                    <a id="searchEventsButton" onclick="location.href='@Url.Action("Events", "DashBoard")'">
+                                        <i class="glyphicon glyphicon-arrow-right"></i>
+                                        &nbsp;Search Events
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -207,8 +213,8 @@
                                                 var showWeather = $("#weather");
                                                 var showTemp = $("#temperature");
                                                 var zipCode = 94114;
-                                                var APIKey = '00f51417e3df85ee3a440681e45de978';
-                                                var location = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + "&APPID=" + APIKey + "&units=imperial";
+                                                var apiKey = '00f51417e3df85ee3a440681e45de978';
+                                                var location = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=" + zipCode + "&APPID=" + apiKey + "&units=imperial";
 
                                                 $.ajax({
                                                     url: location,
