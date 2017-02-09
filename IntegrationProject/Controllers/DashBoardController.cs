@@ -25,12 +25,124 @@ namespace IntegrationProject.Controllers
         // GET: DashBoard
         public ActionResult Index()
         {
-            var currentUserName = User.Identity.Name;
-            var currentUser = _context.Users.FirstOrDefault(m => m.UserName == currentUserName);
+            var currentUserId = User.Identity.GetUserId();
+            var currentUser = _context.Users.FirstOrDefault(m => m.Id == currentUserId);
+            var interestInDatabase = _context.Interest.SingleOrDefault(m => m.UserId == currentUserId);
+            var selectedInterests = new List<string>();
+            if (interestInDatabase.Comedy == true)
+            {
+                selectedInterests.Add("Comedy");
+            }
+            if (interestInDatabase.Concerts == true)
+            {
+                selectedInterests.Add("Concerts");
+            }
+            if (interestInDatabase.Conferences == true)
+            {
+                selectedInterests.Add("Conferences");
+            }
+            if (interestInDatabase.Education == true)
+            {
+                selectedInterests.Add("Education");
+            }
+            if (interestInDatabase.Family == true)
+            {
+                selectedInterests.Add("Family");
+            }
+            if (interestInDatabase.Festivals == true)
+            {
+                selectedInterests.Add("Festivals");
+            }
+            if (interestInDatabase.Film == true)
+            {
+                selectedInterests.Add("Film");
+            }
+            if (interestInDatabase.Food == true)
+            {
+                selectedInterests.Add("Food");
+            }
+            if (interestInDatabase.Fundraisers == true)
+            {
+                selectedInterests.Add("Fundraisers");
+            }
+            if (interestInDatabase.Galleries == true)
+            {
+                selectedInterests.Add("Galleries");
+            }
+            if (interestInDatabase.Health == true)
+            {
+                selectedInterests.Add("Health");
+            }
+            if (interestInDatabase.Holidays == true)
+            {
+                selectedInterests.Add("Holidays");
+            }
+            if (interestInDatabase.Literary == true)
+            {
+                selectedInterests.Add("Literary");
+            }
+            if (interestInDatabase.Musuems == true)
+            {
+                selectedInterests.Add("Musuems");
+            }
+            if (interestInDatabase.Neighboorhood == true)
+            {
+                selectedInterests.Add("Neighboorhood");
+            }
+            if (interestInDatabase.NightLife == true)
+            {
+                selectedInterests.Add("Night Life");
+            }
+            if (interestInDatabase.OnCampus == true)
+            {
+                selectedInterests.Add("On Campus");
+            }
+            if (interestInDatabase.Organizations == true)
+            {
+                selectedInterests.Add("Organizations");
+            }
+            if (interestInDatabase.Outdoors == true)
+            {
+                selectedInterests.Add("Outdoors");
+            }
+            if (interestInDatabase.Pets == true)
+            {
+                selectedInterests.Add("Pets");
+            }
+            if (interestInDatabase.PerformingArts == true)
+            {
+                selectedInterests.Add("Performing Arts");
+            }
+            if (interestInDatabase.Politics == true)
+            {
+                selectedInterests.Add("Politics");
+            }
+            if (interestInDatabase.Sales == true)
+            {
+                selectedInterests.Add("Sales");
+            }
+            if (interestInDatabase.Science == true)
+            {
+                selectedInterests.Add("Science");
+            }
+            if (interestInDatabase.Spiritualality == true)
+            {
+                selectedInterests.Add("Spiritualality");
+            }
+            if (interestInDatabase.Sports == true)
+            {
+                selectedInterests.Add("Sports");
+            }
+            if (interestInDatabase.Technology == true)
+            {
+                selectedInterests.Add("Technology");
+            }
 
             var viewModel = new DashBoardViewModels()
             {
-                User = currentUser
+                User = currentUser,
+                Interest = interestInDatabase,
+                SelectedInterestsList = selectedInterests
             };
             return View(viewModel);
         }
