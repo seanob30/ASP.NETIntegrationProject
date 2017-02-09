@@ -1,4 +1,5 @@
-﻿@model IntegrationProject.ViewModels.DashBoardViewModels
+﻿@using Microsoft.Ajax.Utilities
+@model IntegrationProject.ViewModels.DashBoardViewModels
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutDash.cshtml";
@@ -58,59 +59,146 @@
                 <div class="col-md-9">
                     <div class="profile-content">
 
-                        <div class="col-md-5">
-                            <div class="container" align="center">
-                                <div class="row">
-                                    <div id="search-results"></div>
-                                </div>
-                            </div>
-                            <script src="/Scripts/jquery-1.10.2.js"></script>
-                            <script type="text/javascript" src="https://api.eventful.com/js/api"></script>
-                            <script>
-            $( document ).ready(function() {
-                var oArgs = {
-                    app_key: "D6WcnD6b7PwqctmP",
-                    q: "@Model.SelectedInterestsList.ElementAt(0)",
-                    where: "San Francisco",
-                    date: "Today",
-                    page_size: 5,
-                    sort_order: "popularity"
-                };
-                EVDB.API.call("/events/search",
-                    oArgs,
-                    function(oData) {
-                        var html = '';
-                        for (i = 0; i < oData.events.event.length; i++) {
-                            html += document.getElementById("search-results")
-                                .innerHTML += '<div class="row">' +
-                                '<div class="col-md-1">' +
-                                oData.events.event[i].title.substring(0, 14) +
-                                "</div>" +
-                                '<div class="col-md-1">' +
-                                oData.events.event[i].start_time.replace("2017-", "") +
-                                "</div>" +
-                                '<div class="col-md-1">' +
-                                oData.events.event[i].venue_name.substring(0, 14) +
-                                "</div>" +
-                                '<div class="col-md-2">' +
-                                oData.events.event[i].venue_address +
-                                "</div>" +
-                                "</div>" +
-                                '<br />';
-                        }
-                        $('search-results').html(html)
-                    });
-            });
-        </script>
+                        <div class="row">
+                            <div id="search-results1"></div>
+                        </div>
+                        <div class="row">
+                            <div id="search-results2"></div>
+                        </div>
+                        <script src="/Scripts/jquery-1.10.2.js"></script>
+                        <script type="text/javascript" src="https://api.eventful.com/js/api"></script>
+                        <script>
+                            $(document).ready(function() {
+                                var oArgs = {
+                                    app_key: "D6WcnD6b7PwqctmP",
+                                    q: "@Model.SelectedInterestsList.ElementAt(0)",
+                                    where: "San Francisco",
+                                    date: "Today",
+                                    page_size: 5,
+                                    sort_order: "popularity"
+                                };
+                                EVDB.API.call("/events/search",
+                                    oArgs,
+                                    function(oData) {
+                                        var html = '';
 
-<br>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<br>
-<br>
+                                        html += document.getElementById("search-results1")
+                                            .innerHTML += '<div class="container col-md-6">' +
+                                            '<div class="panel-group">' +
+                                            '<div class="panel panel-default">' +
+                                            '<div class="panel-heading">' +
+                                            '<h4 class="panel-title">' +
+                                            '<a data-toggle="collapse" href="#collapse1">' +
+                                            "@Model.SelectedInterestsList.ElementAt(0)" +
+                                            '</a>' +
+                                            '</h4>' +
+                                            '</div>' +
+                                            '<div id="collapse1" class="panel-collapse collapse"> <div class="panel-body">' +
+                                            '<ul>' +
+                                            '<li>' +
+                                            oData.events.event[0].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[0].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '<li>' +
+                                            oData.events.event[1].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[1].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '<li>' +
+                                            oData.events.event[2].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[2].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '<li>' +
+                                            oData.events.event[3].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[3].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '<li>' +
+                                            oData.events.event[4].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[4].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '</ul>' +
+                                            '</div>' +
+                                            '</div>' +
+                                            '</div>';
+
+                                        $('search-results1').html(html);
+                                    });
+                            });
+                            $(document).ready(function () {
+                                var oArgs = {
+                                    app_key: "D6WcnD6b7PwqctmP",
+                                    q: "@Model.SelectedInterestsList.ElementAt(1)",
+                                    where: "San Francisco",
+                                    date: "Today",
+                                    page_size: 5,
+                                    sort_order: "popularity"
+                                };
+                                EVDB.API.call("/events/search",
+                                    oArgs,
+                                    function (oData) {
+                                        var html = '';
+
+                                        html += document.getElementById("search-results1")
+                                            .innerHTML += '<div class="container col-md-6">' +
+                                            '<div class="panel-group">' +
+                                            '<div class="panel panel-default">' +
+                                            '<div class="panel-heading">' +
+                                            '<h4 class="panel-title">' +
+                                            '<a data-toggle="collapse" href="#collapse2">' +
+                                            "@Model.SelectedInterestsList.ElementAt(1)" +
+                                            '</a>' +
+                                            '</h4>' +
+                                            '</div>' +
+                                            '<div id="collapse2" class="panel-collapse collapse"> <div class="panel-body">' +
+                                            '<ul>' +
+                                            '<li>' +
+                                            oData.events.event[0].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[0].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '<li>' +
+                                            oData.events.event[1].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[1].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '<li>' +
+                                            oData.events.event[2].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[2].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '<li>' +
+                                            oData.events.event[3].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[3].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '<li>' +
+                                            oData.events.event[4].title.substring(0, 20) +
+                                            '&nbsp;&nbsp;&nbsp;&nbsp;' +
+                                            oData.events.event[4].start_time.replace("2017-", "") +
+                                            '</li>' +
+                                            '</ul>' +
+                                            '</div>' +
+                                            '</div>' +
+                                            '</div>';
+
+                                        $('search-results2').html(html);
+                                    });
+                            });
+                        </script>
+
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
 </body>
+
+
 
